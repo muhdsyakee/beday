@@ -1,0 +1,374 @@
+/* Base Styles */
+:root {
+    --primary-green: #8bc34a;
+    --dark-green: #689f38;
+    --light-green: #dcedc8;
+    --white: #ffffff;
+    --soft-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Section Common Styles */
+.section {
+    padding: 80px 20px;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--dark-green);
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('assets/images/hero-bg-placeholder.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.birthdate {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--white);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Memory Gallery */
+.memory-gallery {
+    background-color: var(--white);
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--soft-shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(139, 195, 74, 0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Seokjin Tribute */
+.seokjin-tribute {
+    background-color: var(--light-green);
+}
+
+.tribute-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.seokjin-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.seokjin-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--soft-shadow);
+    transition: transform 0.3s ease;
+}
+
+.seokjin-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.song-player {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--soft-shadow);
+    margin-bottom: 20px;
+}
+
+.song-player h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--dark-green);
+}
+
+.seokjin-quote {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--dark-green);
+}
+
+/* Birthday Speech */
+.birthday-speech {
+    background-color: var(--white);
+}
+
+.speech-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--light-green);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--soft-shadow);
+    position: relative;
+}
+
+.speech-content p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-top: 30px;
+}
+
+/* September Quotes */
+.quotes {
+    background-color: var(--light-green);
+}
+
+.quotes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.quote-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--soft-shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-10px);
+}
+
+.quote-card p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--dark-green);
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer .fa-heart {
+    color: #ff6b6b;
+}
+
+.hearts-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Music Control */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#musicToggle {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--soft-shadow);
+    transition: all 0.3s ease;
+}
+
+#musicToggle:hover {
+    background: var(--dark-green);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .speech-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .quotes-container {
+        grid-template-columns: 1fr;
+    }
+}
